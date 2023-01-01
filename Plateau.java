@@ -71,10 +71,10 @@ public class Plateau {
 	
 	public void poseHaut(int x , int y, Tuile t) { 
 		if(this.plateau.get(x-1).get(y) != null) {
-			System.out.println("Position déjà occupé , veuillez replacez votre domino"); 
+			System.out.println("Position dÃ©jÃ  occupÃ©e , veuillez replacez votre domino"); 
 		}else if(x > 0 && x < this.plateau.size() && y >= 0 && y < this.plateau.get(0).size()){
 			this.plateau.get(x-1).set(y, t);
-			System.out.println("Domino placé correctement");
+			System.out.println("Domino placÃ© correctement");
 			
 			this.plateau.get(x).get(y).setVHaut(t);
 			t.setVBas(this.plateau.get(x).get(y));
@@ -98,11 +98,11 @@ public class Plateau {
 	
 	public void poseBas(int x , int y, Tuile t) { 
 		if(this.plateau.get(x+1).get(y) != null) {
-			System.out.println("Position déjà occupé , veuillez replacez votre domino"); 
+			System.out.println("Position dÃ©jÃ  occupÃ©e , veuillez replacez votre domino"); 
 		}else if(x >= 0 && x+1 < this.plateau.size() && y >= 0 && y < this.plateau.get(0).size()){
 			
 			this.plateau.get(x+1).set(y, t);
-			System.out.println("Domino placé correctement");
+			System.out.println("Domino placÃ© correctement");
 			
 			
 			this.plateau.get(x).get(y).setVBas(t);
@@ -129,10 +129,10 @@ public class Plateau {
 	
 	public void poseDroit(int x , int y, Tuile t) { 
 		if(this.plateau.get(x).get(y+1) != null) {
-			System.out.println("Position déjà occupé , veuillez replacez votre domino"); 
+			System.out.println("Position dÃ©jÃ  occupÃ©e , veuillez replacez votre domino"); 
 		}else if(x >= 0 && x < this.plateau.size() && y >= 0 && y+1 < this.plateau.get(0).size()){
 			this.plateau.get(x).set(y+1, t);
-			System.out.println("Domino placé correctement");
+			System.out.println("Domino placÃ© correctement");
 			
 			this.plateau.get(x).get(y).setVDroit(t);
 			t.setVGauche(this.plateau.get(x).get(y));
@@ -156,10 +156,10 @@ public class Plateau {
 	
 	public void poseGauche(int x , int y, Tuile t) { 
 		if(this.plateau.get(x).get(y-1) != null) {
-			System.out.println("Position déjà occupé , veuillez replacez votre domino"); 
+			System.out.println("Position dÃ©jÃ  occupÃ©e , veuillez replacez votre domino"); 
 		}else if(x >= 0 && x < this.plateau.size() && y > 0 && y < this.plateau.get(0).size()){
 			this.plateau.get(x).set(y-1, t);
-			System.out.println("Domino placé correctement");
+			System.out.println("Domino placÃ© correctement");
 			
 			this.plateau.get(x).get(y).setVGauche(t);
 			t.setVDroit(this.plateau.get(x).get(y));

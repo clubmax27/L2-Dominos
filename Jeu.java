@@ -18,7 +18,7 @@ public class Jeu {
 			nbJoueur = ScanNbJoueur() ;
 		}
 		while(nbJoueur > 8) {
-			System.out.println("Le nombre de Joueur doit �tre inf�rieur ou �gal � huit. Veuillez changez le nombre");
+			System.out.println("Le nombre de Joueur doit être inférieur ou égal à huit. Veuillez changez le nombre");
 			nbJoueur = ScanNbJoueur() ;
 		}
 		for(int i = 0 ; i <= nbJoueur ;i++ ) {
