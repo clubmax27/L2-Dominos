@@ -9,18 +9,16 @@ public class Jeu {
 		
 		ArrayList<Joueur> a = new ArrayList<Joueur>() ;
 		
+		// On demande le nombre de joueurs
 		int nbJoueur = ScanNbJoueur() ;
-		
-		try {
-			int z = nbJoueur ;
-		}catch(InputMismatchException e) {
-			System.out.println("Nombre incorrect, veuillez recommencez");
-			nbJoueur = ScanNbJoueur() ;
-		}
-		while(nbJoueur > 8) {
+
+		// Tant que le nombre de joueur est incorrect
+		while(nbJoueur > 8 && nbJoueur < 2) {
 			System.out.println("Le nombre de Joueur doit être inférieur ou égal à huit. Veuillez changez le nombre");
 			nbJoueur = ScanNbJoueur() ;
 		}
+
+		// On ajoute tout les joueurs à la liste des joueurs 
 		for(int i = 0 ; i <= nbJoueur ;i++ ) {
 			a.add(ScanNomJoueur(i)) ;
 		}
