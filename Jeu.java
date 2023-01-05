@@ -40,14 +40,12 @@ public class Jeu {
 		
 		
 		// Création du plateau de jeu 
-		Plateau Plateaujeu = new Plateau() ;
-		Plateaujeu.plateau.get(0).add(s.CreaTuile()) ;
-		
+		Plateau Plateaujeu = new Plateau(s) ;
 		Jeu part = new Jeu(Plateaujeu , s ,a) ;
 		
 		while(FinJeu(a,s) == false) {
 			for(int i = 0 ; i < a.size() ; i++) {
-				System.out.println("Tour de " + a.get(i).nom);
+				Plateaujeu.afficher();
 				part.Tour(i);
 			}
 		}
@@ -56,7 +54,29 @@ public class Jeu {
 	public void Tour(int n) {
 		
 		if(this.ListJoueur.get(n).abandon != true) {
+			System.out.println("Tour de " + this.ListJoueur.get(n).nom);
 			this.ListJoueur.get(n).main = this.s.CreaTuile() ;
+			Scanner scanner = new Scanner(System.in) ;
+			this.ListJoueur.get(n).main.AfficheHaut() ;
+			this.ListJoueur.get(n).main.AfficheLigne1();
+			this.ListJoueur.get(n).main.AfficheLigne2();
+			this.ListJoueur.get(n).main.AfficheLigne3();
+			this.ListJoueur.get(n).main.AfficheBas();
+			System.out.println("Que voulez vous faire ? Abandon : (a) ; Placer votre domino (p)  ; ou passez le tour (pass) ; ou tourner le domino (t) ");
+			
+			if(scanner.next() == "a") {
+				this.ListJoueur.get(n).abandon = true ;
+			}else if(scanner.next() == "p") {
+				
+			}else if(scanner.next() == "pass") {
+				return ;
+			}else if(scanner.next() == "t") {
+				this.ListJoueur.get(n).main.tournerDroite();
+				Tour(n) ;
+			}else{
+				System.out.println("Option incorrect , recommencer ");
+				Tour(n) ;
+			}
 		}
 	}
 	
